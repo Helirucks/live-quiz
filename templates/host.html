@@ -5,12 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>Live-Quiz · Quizmaster</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+  <canvas id="matrix-bg"></canvas>
+
   <div class="page page--top">
     <div class="card card--wide">
+      <div class="terminal-bar">
+        <span class="terminal-dot dot-red"></span>
+        <span class="terminal-dot dot-yellow"></span>
+        <span class="terminal-dot dot-green"></span>
+        <span class="terminal-title">host_view.py — running</span>
+      </div>
+      <div class="card-body">
 
       <!-- ===================== LOBBY ===================== -->
       <section id="screen-lobby">
@@ -88,9 +97,11 @@
       </section>
 
     </div>
+    </div>
   </div>
 
   <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="{{ url_for('static', filename='js/matrix-bg.js') }}"></script>
   <script src="{{ url_for('static', filename='js/host.js') }}"></script>
 </body>
 </html>
