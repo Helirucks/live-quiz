@@ -1,32 +1,87 @@
 [
   {
-    "question": "Was ist die Hauptstadt von Australien?",
-    "answers": ["Sydney", "Canberra", "Melbourne", "Perth"],
+    "question": "Wofür steht die Abkürzung CSV (Dateiformat)?",
+    "answers": ["Comma Separated Values", "Computer System Variable", "Code Structure Visualization", "Central Storage Volume"],
+    "correct": 0,
+    "time_limit": 15
+  },
+  {
+    "question": "Welcher Python-Befehl gibt Text auf dem Bildschirm aus?",
+    "answers": ["print()", "echo()", "display()", "output()"],
+    "correct": 0,
+    "time_limit": 15
+  },
+  {
+    "question": "Was gibt dieser Code aus?\nname = \"Mia\"\nalter = 22\nprint(name)\nprint(alter)",
+    "answers": ["Mia und 22 (in zwei Zeilen)", "name und alter", "\"Mia\" und \"22\"", "Einen Fehler"],
+    "correct": 0,
+    "time_limit": 20
+  },
+  {
+    "question": "quiz_score = 49\nif quiz_score >= 50:\n  print(\"Bestanden\")\nelse:\n  print(\"Nicht bestanden\")\n\nWas wird ausgegeben?",
+    "answers": ["Bestanden", "Nicht bestanden", "49", "Ein Fehler"],
     "correct": 1,
     "time_limit": 20
   },
   {
-    "question": "Welche Programmiersprache verwenden wir für dieses Quiz?",
-    "answers": ["JavaScript", "C++", "Python", "Java"],
+    "question": "Welche Sprache liegt aktuell auf Platz 1 der meistgenutzten Programmiersprachen?",
+    "answers": ["Java", "JavaScript", "Python", "C#"],
     "correct": 2,
     "time_limit": 15
   },
   {
-    "question": "Wie viele Bits hat ein Byte?",
-    "answers": ["4", "8", "16", "32"],
-    "correct": 1,
-    "time_limit": 15
-  },
-  {
-    "question": "Welcher Planet ist der Erde am nächsten?",
-    "answers": ["Mars", "Merkur", "Venus", "Jupiter"],
-    "correct": 2,
+    "question": "Was ist Project Jupyter?",
+    "answers": [
+      "Eine interaktive Webanwendung für Code, Text und Visualisierungen",
+      "Ein Antivirenprogramm",
+      "Eine Tabellenkalkulation von Microsoft",
+      "Ein Texteditor nur für Java"
+    ],
+    "correct": 0,
     "time_limit": 20
   },
   {
-    "question": "In welchem Jahr wurde Python erstmals veröffentlicht?",
-    "answers": ["1985", "1991", "2000", "1979"],
-    "correct": 1,
+    "question": "Wofür wird GeoPandas zusätzlich zu Pandas genutzt?",
+    "answers": [
+      "Verarbeitung von Standort- und Koordinatendaten",
+      "Verschlüsselung von Passwörtern",
+      "Erstellen von PowerPoint-Folien",
+      "Verwaltung von E-Mails"
+    ],
+    "correct": 0,
+    "time_limit": 20
+  },
+  {
+    "question": "Was beschreibt 'Overfitting' bei einem Machine-Learning-Modell?",
+    "answers": [
+      "Modell lernt Trainingsdaten auswendig und versagt bei neuen Daten",
+      "Modell ist zu einfach und erkennt keine Muster",
+      "Modell läuft zu langsam",
+      "Modell hat zu wenige Variablen"
+    ],
+    "correct": 0,
     "time_limit": 25
+  },
+  {
+    "question": "Was ist Cross-Validation ?",
+    "answers": [
+      "Testmethode mit mehreren Datenblöcken (Folds) zur Prüfung der Vorhersagekraft",
+      "Eine Methode zum Verschlüsseln von Daten",
+      "Ein Verfahren zum Löschen doppelter Datensätze",
+      "Eine Visualisierungstechnik für Karten"
+    ],
+    "correct": 0,
+    "time_limit": 25
+  },
+  {
+    "question": "Was ist eine Baseline bei der Modellbewertung?",
+    "answers": [
+      "Das schnellste verfügbare Modell",
+      "Einfaches Referenzmodell als Vergleichsmaßstab",
+      "Die Trainingsdaten eines Modells",
+      "Der Name der Programmiersprache"
+    ],
+    "correct": 1,
+    "time_limit": 20
   }
 ]
