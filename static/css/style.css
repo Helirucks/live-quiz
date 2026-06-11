@@ -32,7 +32,7 @@
   box-sizing: border-box;
 }
 
-html, body {
+html {
   height: 100%;
 }
 
@@ -52,6 +52,7 @@ body {
   inset: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   display: block;
   z-index: 0;
   opacity: 0.55;
@@ -61,6 +62,7 @@ body {
   position: relative;
   z-index: 1;
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,6 +72,7 @@ body {
 .page--top {
   align-items: flex-start;
   padding-top: 5vh;
+  padding-top: 5dvh;
 }
 
 /* ---------- Karten / Terminal-Fenster ---------- */
@@ -469,6 +472,7 @@ a {
   grid-template-rows: 1fr 1fr;
   gap: 16px;
   height: 60vh;
+  height: 60dvh;
   max-height: 460px;
 }
 
@@ -667,4 +671,63 @@ a {
   font-family: var(--font-display);
   font-size: 1.5rem;
   color: var(--accent);
+}
+
+/* =========================================================
+   Mobile-Anpassungen (Handy / Tablet hochkant)
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .page {
+    padding: 12px;
+  }
+
+  .page--top {
+    padding-top: 12px;
+  }
+
+  .card-body {
+    padding: 18px;
+  }
+
+  .terminal-bar {
+    padding: 10px 14px;
+  }
+
+  .landing-icon {
+    font-size: 2.2rem;
+  }
+
+  h1 {
+    font-size: clamp(1.3rem, 7vw, 1.8rem);
+  }
+
+  .question-text {
+    font-size: clamp(0.95rem, 4.2vw, 1.25rem);
+    padding: 14px;
+  }
+
+  .shape-grid {
+    height: 50vh;
+    height: 50dvh;
+    max-height: 320px;
+    gap: 10px;
+  }
+
+  .shape-btn {
+    font-size: 2.6rem;
+    border-radius: 14px;
+  }
+
+  .answer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bar-chart {
+    height: 130px;
+  }
+
+  .podium-1 { height: 110px; }
+  .podium-2 { height: 85px; }
+  .podium-3 { height: 65px; }
 }
