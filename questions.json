@@ -1,0 +1,32 @@
+[
+  {
+    "question": "Was ist die Hauptstadt von Australien?",
+    "answers": ["Sydney", "Canberra", "Melbourne", "Perth"],
+    "correct": 1,
+    "time_limit": 20
+  },
+  {
+    "question": "Welche Programmiersprache verwenden wir für dieses Quiz?",
+    "answers": ["JavaScript", "C++", "Python", "Java"],
+    "correct": 2,
+    "time_limit": 15
+  },
+  {
+    "question": "Wie viele Bits hat ein Byte?",
+    "answers": ["4", "8", "16", "32"],
+    "correct": 1,
+    "time_limit": 15
+  },
+  {
+    "question": "Welcher Planet ist der Erde am nächsten?",
+    "answers": ["Mars", "Merkur", "Venus", "Jupiter"],
+    "correct": 2,
+    "time_limit": 20
+  },
+  {
+    "question": "In welchem Jahr wurde Python erstmals veröffentlicht?",
+    "answers": ["1985", "1991", "2000", "1979"],
+    "correct": 1,
+    "time_limit": 25
+  }
+]

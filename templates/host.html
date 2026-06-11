@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Live-Quiz · Quizmaster</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="page page--top">
+    <div class="card card--wide">
+
+      <!-- ===================== LOBBY ===================== -->
+      <section id="screen-lobby">
+        <div class="eyebrow">Live-Quiz · Quizmaster-Ansicht</div>
+        <h1>Bereit zum Start?</h1>
+        <p>Projiziere diese Seite. Deine Kommiliton:innen rufen den Link auf
+           und treten mit ihrem Namen bei.</p>
+
+        <div class="lobby-grid">
+          <div class="join-box">
+            <div class="eyebrow">Beitreten unter</div>
+            <div class="join-url" id="join-url">…</div>
+            <img id="qr-code" alt="QR-Code zum Beitreten" width="180" height="180">
+          </div>
+
+          <div>
+            <h2>Teilnehmer <span class="player-count" id="player-count">(0)</span></h2>
+            <div class="player-list" id="player-list"></div>
+            <div class="error-text" id="lobby-error"></div>
+            <div class="btn-row">
+              <button class="btn btn-primary" id="btn-start" disabled>Quiz starten</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== FRAGE ===================== -->
+      <section id="screen-question" class="hidden">
+        <div class="question-meta">
+          <span id="question-progress">Frage 1 von 5</span>
+          <div class="timer-wrap">
+            <div class="timer-ring">
+              <svg viewBox="0 0 64 64">
+                <circle class="timer-bg" cx="32" cy="32" r="28"></circle>
+                <circle class="timer-fg" id="timer-fg" cx="32" cy="32" r="28"></circle>
+              </svg>
+            </div>
+            <div class="timer-number" id="timer-number">20</div>
+          </div>
+        </div>
+
+        <h2 class="question-text" id="question-text">…</h2>
+        <div class="answer-grid" id="answer-grid"></div>
+
+        <div class="status-line">
+          <span><span class="pulse-dot"></span><span id="answer-progress">0 von 0 haben geantwortet</span></span>
+        </div>
+      </section>
+
+      <!-- ===================== ERGEBNIS DER FRAGE ===================== -->
+      <section id="screen-results" class="hidden">
+        <div class="eyebrow">Auswertung</div>
+        <h2>Richtige Antwort: <span id="correct-answer-text"></span></h2>
+
+        <div class="bar-chart" id="bar-chart"></div>
+
+        <h3>🏆 Bestenliste</h3>
+        <ol class="leaderboard" id="leaderboard"></ol>
+
+        <div class="btn-row">
+          <button class="btn btn-primary" id="btn-next">Nächste Frage</button>
+        </div>
+      </section>
+
+      <!-- ===================== ENDE ===================== -->
+      <section id="screen-ended" class="hidden">
+        <h1>🎉 Quiz beendet!</h1>
+
+        <div class="podium" id="podium"></div>
+        <ol class="leaderboard" id="final-leaderboard"></ol>
+
+        <div class="btn-row">
+          <button class="btn btn-primary" id="btn-restart">Neue Runde starten</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="{{ url_for('static', filename='js/host.js') }}"></script>
+</body>
+</html>

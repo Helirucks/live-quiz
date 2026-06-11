@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Live-Quiz · Mitspielen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="page">
+    <div class="card card--narrow">
+
+      <!-- ===================== BEITRETEN ===================== -->
+      <section id="screen-join">
+        <div class="eyebrow">Live-Quiz</div>
+        <h1>Mitspielen</h1>
+        <p>Gib deinen Namen ein – er erscheint auf der Projektion.</p>
+
+        <input class="input" id="name-input" placeholder="Dein Name" maxlength="20" autocomplete="off">
+        <div class="error-text" id="join-error"></div>
+
+        <div class="btn-row">
+          <button class="btn btn-primary" id="btn-join">Beitreten</button>
+        </div>
+      </section>
+
+      <!-- ===================== WARTEZIMMER ===================== -->
+      <section id="screen-waiting" class="hidden">
+        <div class="eyebrow">Live-Quiz</div>
+        <h1 id="waiting-title">Du bist dabei!</h1>
+        <p>Schau auf die Projektion – das Quiz startet gleich.</p>
+        <p style="text-align:center; margin-top: 24px;">
+          <span class="pulse-dot"></span>Warte auf den Start …
+        </p>
+      </section>
+
+      <!-- ===================== FRAGE ===================== -->
+      <section id="screen-question" class="hidden">
+        <div class="question-meta">
+          <span id="question-progress">Frage 1 von 5</span>
+          <div class="timer-wrap">
+            <div class="timer-ring">
+              <svg viewBox="0 0 64 64">
+                <circle class="timer-bg" cx="32" cy="32" r="28"></circle>
+                <circle class="timer-fg" id="timer-fg" cx="32" cy="32" r="28"></circle>
+              </svg>
+            </div>
+            <div class="timer-number" id="timer-number">20</div>
+          </div>
+        </div>
+
+        <p style="text-align:center; margin-top:0;">Wähle die passende Form – Frage &amp; Antworten siehst du auf der Projektion.</p>
+
+        <div class="shape-grid" id="shape-grid"></div>
+
+        <div class="status-line" id="answer-status"></div>
+      </section>
+
+      <!-- ===================== ERGEBNIS ===================== -->
+      <section id="screen-result" class="hidden">
+        <div class="result-banner" id="result-banner">
+          <div class="big" id="result-title">Richtig!</div>
+          <div class="result-points" id="result-points">+850 Punkte</div>
+        </div>
+        <div class="score-line">
+          <span>Gesamtpunkte</span>
+          <span class="total" id="total-score">0</span>
+        </div>
+      </section>
+
+      <!-- ===================== ENDE ===================== -->
+      <section id="screen-ended" class="hidden">
+        <h1>🎉 Geschafft!</h1>
+        <p>Danke fürs Mitspielen – schau auf die Projektion für die Bestenliste.</p>
+        <div class="score-line">
+          <span>Deine Endpunktzahl</span>
+          <span class="total" id="final-score">0</span>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="{{ url_for('static', filename='js/player.js') }}"></script>
+</body>
+</html>
